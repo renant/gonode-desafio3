@@ -14,7 +14,7 @@ module.exports = async (req, res, next) => {
   try {
     const decoded = await promisify(jwt.verify)(token, authConfig.secret)
 
-    req.userId = decoded.Id
+    req.userId = decoded.id
 
     return next()
   } catch (error) {
